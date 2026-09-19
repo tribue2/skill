@@ -1,0 +1,39 @@
+Pachet pentru verificare skill (fara RNG de plata, fara RTP).
+IQWIN — surse de jocuri. Fara parole, config, admin, baza de date sau terminale.
+
+Document de predat:
+  Raport-Audit-Tehnic.pdf
+  (audit tehnic pe jocuri — fara emitent / firma pe coperta)
+
+Ce este in folder
+-----------------
+games/
+  Clientul fiecarui joc (HTML/JS/CSS), benzi de role, stop skill, mini-jocuri.
+  Jocuri: verga-gold, boss-crown, dodge-bomb, logic-and-zeus, 40-burn-hot, intelligent-book.
+
+api/includes/games/
+  Motoare PHP: din tabla oprita de jucator se calculeaza linia/castigul.
+  Nu exista generator de rezultat si nu exista RTP.
+
+api/terminal/session.php
+  Inchiderea rundei pe server: reevalueaza opririle, respinge runde invalide,
+  plateste doar daca skill_stop_used este adevărat.
+
+api/terminal/quiz.php
+  Mini-joc intrebari: raspuns corect/gresit verificat pe server.
+
+api/includes/multiplayer_contest.php
+  Functia termMpResolveSpinWinCredits: fara skill stop, castigul platit este 0.
+
+Ce sa verifice auditorul
+------------------------
+1. Motoarele din api/includes/games/ — evaluare determinista din simboluri/opririle rolelor.
+2. session.php — serverul nu accepta un castig inventat de client.
+3. skill_stop_used — plata doar dupa oprire skill.
+4. In JS, Math.random (animatie, pozitie de start a rolelor) nu decide suma platita.
+
+Ce NU este in pachet (intentionat)
+----------------------------------
+config/parole, administrator, dump SQL, kit terminal, chei API, date clienti.
+
+Pachetul nu ruleaza singur ca site. Este doar sursa pentru audit.

@@ -1,0 +1,93 @@
+.terminal-forfeit-popup {
+    position: absolute;
+    inset: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(12px, 2.2vw, 22px);
+    box-sizing: border-box;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.terminal-forfeit-popup.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.terminal-forfeit-popup__backdrop {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at 50% 45%, rgba(60, 10, 20, 0.32), rgba(0, 0, 0, 0.58) 72%);
+}
+
+.terminal-forfeit-popup__card {
+    position: relative;
+    z-index: 1;
+    width: min(560px, 92%);
+    padding: clamp(14px, 2vw, 22px) clamp(16px, 2.4vw, 28px);
+    border-radius: clamp(14px, 1.6vw, 18px);
+    text-align: center;
+    border: 1.5px solid rgba(248, 113, 113, 0.72);
+    background:
+        linear-gradient(180deg, rgba(255, 130, 130, 0.1) 0%, transparent 34%),
+        linear-gradient(165deg, rgba(28, 12, 18, 0.96) 0%, rgba(12, 8, 14, 0.98) 100%);
+    box-shadow:
+        0 0 0 1px rgba(255, 180, 180, 0.12),
+        0 18px 48px rgba(0, 0, 0, 0.55),
+        0 0 42px rgba(239, 68, 68, 0.28),
+        inset 0 1px 0 rgba(255, 220, 220, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateY(10px) scale(0.96);
+    transition: transform 0.32s cubic-bezier(0.22, 1.2, 0.36, 1);
+}
+
+.terminal-forfeit-popup.is-visible .terminal-forfeit-popup__card {
+    transform: translateY(0) scale(1);
+    animation: terminal-forfeit-pulse 1.4s ease-in-out infinite alternate;
+}
+
+.terminal-forfeit-popup__title {
+    display: block;
+    margin: 0 0 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(12px, 1.35vw, 15px);
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 170, 170, 0.95);
+}
+
+.terminal-forfeit-popup__text {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(12px, 1.45vw, 16px);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(255, 180, 190, 0.98);
+    text-shadow: 0 0 18px rgba(248, 113, 113, 0.35);
+}
+
+@keyframes terminal-forfeit-pulse {
+    from {
+        box-shadow:
+            0 0 0 1px rgba(255, 180, 180, 0.12),
+            0 18px 48px rgba(0, 0, 0, 0.55),
+            0 0 34px rgba(239, 68, 68, 0.22),
+            inset 0 1px 0 rgba(255, 220, 220, 0.12);
+    }
+    to {
+        box-shadow:
+            0 0 0 1px rgba(255, 200, 200, 0.18),
+            0 18px 48px rgba(0, 0, 0, 0.55),
+            0 0 54px rgba(239, 68, 68, 0.4),
+            inset 0 1px 0 rgba(255, 220, 220, 0.14);
+    }
+}

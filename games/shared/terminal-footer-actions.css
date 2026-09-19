@@ -1,0 +1,195 @@
+body.verda-gold-body.verga-gold-body .verga-side-footer-actions.terminal-game-footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: clamp(6px, 0.8vw, 10px) !important;
+    width: 100% !important;
+    margin-top: auto !important;
+    flex-shrink: 0 !important;
+    grid-template-columns: none !important;
+    position: relative !important;
+    z-index: 20 !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-footer-volume {
+    position: relative !important;
+    flex: 0 0 auto !important;
+    width: clamp(40px, 4.6vw, 46px) !important;
+    height: clamp(40px, 4.6vw, 46px) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    box-sizing: border-box !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-volume-toggle {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(212, 175, 88, 0.62) !important;
+    background:
+        radial-gradient(circle at 35% 28%, rgba(255, 240, 190, 0.14), transparent 45%),
+        linear-gradient(180deg, rgba(18, 22, 44, 0.96), rgba(6, 8, 22, 0.98)) !important;
+    color: #e8c868 !important;
+    display: grid !important;
+    place-items: center !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 236, 180, 0.12),
+        0 4px 12px rgba(0, 0, 0, 0.28) !important;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-volume-toggle svg {
+    width: 20px !important;
+    height: 20px !important;
+    display: block !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-volume-toggle:hover:not(:disabled),
+body.verda-gold-body.verga-gold-body .terminal-volume-toggle[aria-expanded="true"] {
+    border-color: rgba(255, 196, 72, 0.95) !important;
+    color: #ffe082 !important;
+    box-shadow:
+        0 0 14px rgba(255, 160, 40, 0.22),
+        inset 0 1px 0 rgba(255, 236, 180, 0.16) !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-volume-toggle:disabled {
+    opacity: 0.45 !important;
+    cursor: not-allowed !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-volume-popover {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: calc(100% + 10px) !important;
+    transform: translateX(-50%) !important;
+    z-index: 40 !important;
+    width: 168px !important;
+    padding: 10px 12px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(196, 152, 58, 0.5) !important;
+    background:
+        linear-gradient(180deg, rgba(255, 220, 140, 0.08) 0%, transparent 28%),
+        linear-gradient(180deg, rgba(14, 18, 38, 0.98) 0%, rgba(5, 7, 20, 0.99) 100%) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 230, 160, 0.1),
+        0 12px 28px rgba(2, 4, 16, 0.45) !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-volume-popover[hidden] {
+    display: none !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-volume-popover .terminal-settings-volume-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-volume-popover .terminal-settings-volume-slider {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    height: 5px !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-volume-popover .terminal-settings-volume-value {
+    min-width: 2.4ch !important;
+    font-size: 0.62rem !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-game-home-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: clamp(38px, 4.2vw, 44px) !important;
+    padding: 8px 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 8px !important;
+    background: rgba(12, 12, 12, 0.32) !important;
+    color: #b0b0b0 !important;
+    font-family: 'Bebas Neue', Impact, sans-serif !important;
+    font-size: clamp(0.72rem, 1.05vw, 0.9rem) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    box-shadow:
+        0 1px 0 0 rgba(0, 0, 0, 0.35),
+        0 1px 0 0 rgba(255, 255, 255, 0.06) inset !important;
+    transition: color 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-game-home-btn:hover:not(:disabled) {
+    color: #c9a227 !important;
+    border-color: rgba(201, 162, 39, 0.35) !important;
+    box-shadow: 0 0 12px rgba(201, 162, 39, 0.25) !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-game-home-btn:disabled {
+    opacity: 0.35 !important;
+    cursor: not-allowed !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-game-home-icon {
+    width: 16px !important;
+    height: 16px !important;
+    padding: 3px !important;
+    border-radius: 5px !important;
+    background: linear-gradient(180deg, #3a3842 0%, #2a2832 100%) !important;
+    box-shadow:
+        0 2px 0 0 rgba(0, 0, 0, 0.4),
+        0 1px 0 0 rgba(255, 255, 255, 0.06) inset !important;
+    box-sizing: content-box !important;
+    flex: 0 0 auto !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-game-cashout-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    min-width: clamp(78px, 10vw, 98px) !important;
+    min-height: clamp(38px, 4.2vw, 44px) !important;
+    padding: 8px 12px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(254, 215, 170, 0.35) !important;
+    background: linear-gradient(180deg, #fb923c 0%, #ea580c 100%) !important;
+    color: #fff7ed !important;
+    font-family: 'Bebas Neue', Impact, sans-serif !important;
+    font-size: clamp(0.85rem, 1.25vw, 1.05rem) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    box-shadow: 0 0 16px rgba(251, 146, 60, 0.24) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-game-cashout-btn:hover:not(:disabled) {
+    box-shadow: 0 0 20px rgba(251, 146, 60, 0.36) !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-game-cashout-btn:active:not(:disabled) {
+    transform: scale(0.97) !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-game-cashout-btn:disabled {
+    opacity: 0.35 !important;
+    cursor: not-allowed !important;
+}
+
+body.verda-gold-body.verga-gold-body .terminal-game-cashout-icon {
+    width: 16px !important;
+    height: 16px !important;
+    flex: 0 0 16px !important;
+}

@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Rajdhani:wght@500;600;700&display=swap');
+
+.mp-contest-stats {
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+
+.mp-contest-stats .terminal-stat-value {
+    white-space: nowrap;
+}
+
+.mp-contest-stat-win .terminal-stat-value {
+    color: #ffd45c;
+}
+
+.mp-entry-grid .mp-entry-btn {
+    min-height: 56px;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+/* --- Waiting overlay after 50/50 spins --- */
+.mp-contest-wait-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 12000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(12px, 3vw, 28px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.mp-contest-wait-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.mp-contest-wait-backdrop {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255, 190, 60, 0.14) 0%, transparent 62%),
+        linear-gradient(180deg, rgba(4, 6, 14, 0.82) 0%, rgba(8, 10, 18, 0.92) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.mp-contest-wait-panel {
+    position: relative;
+    width: min(520px, 100%);
+    padding: clamp(22px, 4vw, 36px) clamp(20px, 4vw, 34px);
+    text-align: center;
+    border-radius: clamp(18px, 2vw, 26px);
+    border: 1px solid rgba(255, 210, 90, 0.45);
+    background: linear-gradient(165deg, rgba(28, 20, 10, 0.96) 0%, rgba(14, 12, 18, 0.98) 100%);
+    box-shadow:
+        0 0 0 1px rgba(255, 220, 120, 0.12),
+        0 18px 48px rgba(0, 0, 0, 0.55),
+        0 0 60px rgba(255, 170, 40, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translateY(12px) scale(0.97);
+    transition: transform 0.4s cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+
+.mp-contest-wait-overlay.is-visible .mp-contest-wait-panel {
+    transform: translateY(0) scale(1);
+}
+
+.mp-contest-wait-overlay.is-celebrate .mp-contest-wait-panel {
+    animation: mp-contest-wait-pop 0.65s cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+
+@keyframes mp-contest-wait-pop {
+    0% { transform: translateY(18px) scale(0.92); opacity: 0.4; }
+    55% { transform: translateY(-4px) scale(1.02); opacity: 1; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.mp-contest-wait-badge {
+    display: inline-block;
+    margin-bottom: clamp(10px, 1.6vw, 14px);
+    padding: 0.45em 0.9em;
+    border-radius: 999px;
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: clamp(0.72rem, 1.4vw, 0.82rem);
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #1a1208;
+    background: linear-gradient(180deg, #ffe566 0%, #ffd700 45%, #d4a017 100%);
+    box-shadow: 0 4px 14px rgba(255, 196, 60, 0.35);
+}
+
+.mp-contest-wait-title {
+    margin: 0 0 0.35em;
+    font-family: 'Cinzel', 'Times New Roman', serif;
+    font-size: clamp(1.55rem, 4vw, 2.15rem);
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff3c4;
+    text-shadow: 0 2px 12px rgba(255, 196, 60, 0.35);
+}
+
+.mp-contest-wait-lead {
+    margin: 0 0 clamp(16px, 2.5vw, 22px);
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+    line-height: 1.45;
+    color: rgba(232, 220, 190, 0.88);
+}
+
+.mp-contest-wait-countdown-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35em;
+    margin-bottom: clamp(12px, 2vw, 16px);
+}
+
+.mp-contest-wait-countdown-label {
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: clamp(0.72rem, 1.3vw, 0.82rem);
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(232, 196, 106, 0.82);
+}
+
+.mp-contest-wait-countdown {
+    display: block;
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: clamp(2.8rem, 9vw, 4.2rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums lining-nums;
+    background: linear-gradient(180deg, #fff9dc 0%, #ffe566 28%, #ffd700 52%, #d4a017 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 18px rgba(255, 196, 60, 0.28));
+}
+
+.mp-contest-wait-progress {
+    display: block;
+    width: 100%;
+    height: 6px;
+    margin-bottom: clamp(16px, 2.5vw, 22px);
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.mp-contest-wait-progress-fill {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #d4a017 0%, #ffd700 45%, #ffe566 100%);
+    box-shadow: 0 0 12px rgba(255, 196, 60, 0.45);
+    transition: width 0.9s linear;
+}
+
+.mp-contest-wait-win {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.35em 0.5em;
+    margin-bottom: clamp(12px, 2vw, 16px);
+    padding: clamp(10px, 1.6vw, 14px) clamp(12px, 2vw, 18px);
+    border-radius: 12px;
+    background: rgba(255, 210, 90, 0.06);
+    border: 1px solid rgba(255, 210, 90, 0.18);
+}
+
+.mp-contest-wait-win-label {
+    flex: 1 1 100%;
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: clamp(0.72rem, 1.3vw, 0.82rem);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(232, 196, 106, 0.78);
+}
+
+.mp-contest-wait-win-value {
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: #ffd45c;
+    font-variant-numeric: tabular-nums lining-nums;
+}
+
+.mp-contest-wait-win-unit {
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: rgba(232, 196, 106, 0.82);
+}
+
+.mp-contest-wait-foot {
+    margin: 0;
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    font-size: clamp(0.82rem, 1.5vw, 0.92rem);
+    line-height: 1.4;
+    color: rgba(200, 190, 170, 0.72);
+}
+
+body.is-mp-contest-wait-overlay #spinButton,
+body.is-mp-contest-wait-overlay #spinButton.is-mp-wait-blocked {
+    pointer-events: none !important;
+    opacity: 0.42 !important;
+    filter: grayscale(0.35);
+    cursor: not-allowed !important;
+}
+
+/* Ultimul minut — rosu foc */
+.mp-contest-wait-overlay.is-urgent-countdown .mp-contest-wait-panel {
+    border-color: rgba(255, 90, 50, 0.58);
+    box-shadow:
+        0 0 0 1px rgba(255, 120, 80, 0.14),
+        0 18px 48px rgba(0, 0, 0, 0.55),
+        0 0 70px rgba(255, 50, 20, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.mp-contest-wait-countdown-wrap.is-urgent .mp-contest-wait-countdown-label {
+    color: rgba(255, 170, 140, 0.92);
+}
+
+.mp-contest-wait-countdown.is-urgent {
+    background: linear-gradient(180deg, #fff0ea 0%, #ffb088 24%, #ff3311 54%, #aa0a00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 18px rgba(255, 60, 25, 0.62)) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.85));
+    animation: mp-contest-wait-urgent-pulse 0.85s ease-in-out infinite;
+}
+
+.mp-contest-wait-progress-fill.is-urgent {
+    background: linear-gradient(90deg, #7a1208, #e62810 38%, #ff5533 72%, #ffb090);
+    box-shadow: 0 0 16px rgba(255, 60, 25, 0.55);
+}
+
+@keyframes mp-contest-wait-urgent-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.035); }
+}
+
+.mp-contest-wait-overlay.is-awaiting-result .mp-contest-wait-countdown {
+    font-size: clamp(1.35rem, 3.8vh, 2rem);
+    letter-spacing: 0.16em;
+    color: #ffd45c;
+    -webkit-text-fill-color: #ffd45c;
+    background: none;
+    filter: drop-shadow(0 0 16px rgba(255, 190, 40, 0.45));
+    animation: mp-contest-wait-await-pulse 1.15s ease-in-out infinite;
+}
+
+.mp-contest-wait-overlay.is-awaiting-result .mp-contest-wait-countdown-label {
+    color: rgba(255, 220, 150, 0.88);
+}
+
+@keyframes mp-contest-wait-await-pulse {
+    0%, 100% { opacity: 0.82; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.03); }
+}
+
+/* Pauza 3s dupa final concurs — blocare SPIN */
+body.is-mp-contest-result-pause #spinButton,
+body.is-mp-contest-result-pause .verga-stop-btn {
+    pointer-events: none !important;
+    opacity: 0.45 !important;
+    filter: grayscale(0.4);
+    cursor: not-allowed !important;
+}
+
+body.is-mp-contest-result-pause #betControls,
+body.is-mp-contest-result-pause #terminalSpeedBar {
+    pointer-events: none;
+    opacity: 0.65;
+}

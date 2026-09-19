@@ -1,0 +1,87 @@
+body.verda-gold-body.verga-gold-body .verga-stop-btn:not(.is-counting):not(.is-stopped) {
+    border: 2px solid #f0c84a !important;
+    border-radius: 12px !important;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, transparent 32%),
+        linear-gradient(180deg, rgba(20, 28, 56, 0.62) 0%, rgba(12, 16, 36, 0.68) 50%, rgba(6, 8, 24, 0.74) 100%) !important;
+    color: #f5dc78 !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(240, 200, 74, 0.42),
+        0 0 16px rgba(255, 200, 60, 0.48),
+        0 0 32px rgba(255, 180, 40, 0.24) !important;
+    animation: none !important;
+    opacity: 1 !important;
+    cursor: default !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
+}
+
+body.verda-gold-body.verga-gold-body .verga-stop-btn:not(.is-counting):not(.is-stopped) .verga-stop-fill {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: scaleY(0) !important;
+}
+
+body.verda-gold-body.verga-gold-body .verga-stop-btn:not(.is-counting):not(.is-stopped) .verga-stop-seconds {
+    color: #f5dc78 !important;
+    font-size: clamp(1.45rem, 2.2vw, 1.95rem) !important;
+    font-weight: 900 !important;
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.88),
+        0 0 10px rgba(255, 210, 90, 0.38) !important;
+}
+
+body.verda-gold-body.verga-gold-body .verga-stop-btn:not(.is-counting):not(.is-stopped) .verga-stop-label {
+    color: #e8c95a !important;
+    font-size: clamp(0.68rem, 0.95vw, 0.82rem) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.82) !important;
+}
+
+body.verda-gold-body.verga-gold-body .verga-stop-btn:disabled:not(.is-stopped) {
+    opacity: 1 !important;
+}
+
+body.verda-gold-body.verga-gold-body .verga-stop-btn.is-stopped {
+    animation: none !important;
+    border: 2px solid #c9a227 !important;
+    border-radius: 12px !important;
+    background: #0a0a0a !important;
+    color: #f5dc78 !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        inset 0 -2px 6px rgba(0, 0, 0, 0.65),
+        0 0 0 1px rgba(201, 162, 39, 0.32),
+        0 0 10px rgba(255, 200, 60, 0.14) !important;
+    opacity: 1 !important;
+    cursor: default !important;
+}
+
+body.verda-gold-body.verga-gold-body .verga-stop-btn.is-stopped .verga-stop-fill,
+body.verda-gold-body.verga-gold-body .verga-stop-btn.is-stopped .verga-stop-seconds {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    display: none !important;
+}
+
+body.verda-gold-body.verga-gold-body .verga-stop-btn.is-stopped .verga-stop-label {
+    color: #f5dc78 !important;
+    font-size: clamp(0.68rem, 0.95vw, 0.82rem) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.88),
+        0 0 10px rgba(255, 210, 90, 0.38) !important;
+}
+
+body.verda-gold-body.verga-gold-body #spinButton.boss-crown-spin.is-hidden-during-manual-stop,
+body.verda-gold-body.verga-gold-body .verga-spin-wrap .boss-crown-spin.is-hidden-during-manual-stop,
+body.verda-gold-body.verga-gold-body .verga-spin-stage .boss-crown-spin.is-hidden-during-manual-stop,
+body.verda-gold-body.verga-gold-body .verga-spin-wrap.is-spin-hidden-during-manual-stop {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
